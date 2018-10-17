@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 export default class Nav extends React.Component {
   render() {    
     return (
+        <div>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#home" data-toggle="tab">Home</a>
@@ -38,6 +38,7 @@ export default class Nav extends React.Component {
   <div class="tab-pane fade" id="dropdown2">
     <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
   </div>
+</div>
 </div>
     );
   }
