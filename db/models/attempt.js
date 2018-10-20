@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 //define attempts schema
 const attemptSchema = new Schema({
     qbName: { type: String, unique: false},
-    pocketTime: Decimal128,
+    pocketTime: Number,
     competion: Boolean,
     defenderName: { type: String, unique: false},
     hurry: Boolean
