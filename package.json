@@ -1,7 +1,6 @@
 {
   "name": "project3",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "bcrypt": "^3.0.1",
@@ -19,7 +18,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/operationb/project3/issues"
   },
-  "homepage": "https://github.com/operationb/project3#readme"
+  "homepage": "https://github.com/operationb/project3#readme",
+  "description": ""
 }

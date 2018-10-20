@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-
 class SignupForm extends Component {
 	constructor() {
 		super()
@@ -21,7 +20,6 @@ class SignupForm extends Component {
 	}
 	handleSubmit(event) {
 		event.preventDefault()
-		// TODO - validate!
 		axios
 			.post('/auth/signup', {
 				username: this.state.username,
@@ -72,5 +70,4 @@ class SignupForm extends Component {
 		)
 	}
 }
-
 export default SignupForm
