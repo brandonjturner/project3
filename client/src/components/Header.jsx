@@ -1,6 +1,4 @@
 import React from 'react'
-// TODO - add proptypes
-
 const Header = props => {
 	let Greeting
 	if (props.user === null) {
@@ -24,5 +22,4 @@ const Header = props => {
 		</div>
 	)
 }
-
 export default Header
