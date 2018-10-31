@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
     return (
 <footer>
     <div class="footer-copyright text-center py-3">
-    © 2018 Copyright
+    Code Monkey Enterprises © 2018 Copyright
     </div>
 </footer>
     );
