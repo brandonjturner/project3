@@ -48,7 +48,7 @@ module.exports = function(app) {
             givenPocketTime: req.body.givenPocketTime
         },
         {
-                _id: req.params.id
+            _id: req.params.id
         })
         .then(function (data) {
             res.status(200).end();
