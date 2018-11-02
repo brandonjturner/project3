@@ -45,10 +45,10 @@ module.exports = function(app) {
     // Update Given Pocket Time
     app.put("/defense/:id", function(req, res) {
         db.Defense.update({
-            givenPocketTime: req.body.givenPocketTime
+            _id: req.params.id
         },
         {
-            _id: req.params.id
+            $set: { givenPocketTime: req.body.givenPocketTime }
         })
         .then(function (data) {
             res.status(200).end();
