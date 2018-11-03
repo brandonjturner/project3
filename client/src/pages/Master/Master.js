@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import UserNav from '../../components/Navbar';
 import QBList from '../../components/QBList';
 import WelcomeDrop from '../../components/Welcome/WelcomeDrop';
+import SignIn from '../../components/SignIn';
 import './Master.css';
 
 
@@ -11,7 +12,7 @@ import './Master.css';
 class Master extends Component {
   
   state = {
-    curPageLeft: 'QBList',
+    curPageLeft: 'SignIn',
     curPageRight: 'Welcome',
     QBList: {}
   }
@@ -28,7 +29,8 @@ class Master extends Component {
         name: 'QB1',
         stat1: '5%',
         stat2: '5%',
-    //   },
+      }
+    //   ,
     //   {
     //     id: 2,
     //     name: 'QB2',
@@ -46,8 +48,8 @@ class Master extends Component {
     //     name: 'QB4',
     //     stat1: '2%',
     //     stat2: '2%',
-    // 
-    }
+    
+    // }
   ];
 
 
@@ -55,6 +57,8 @@ class Master extends Component {
       case 'QBList': 
         dispLeft = (<QBList qblist={qblist}/>);
         break;
+      case 'SignIn': 
+        dispLeft = (<SignIn />);
       default: 
         break;
     };
