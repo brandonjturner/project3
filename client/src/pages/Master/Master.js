@@ -5,9 +5,6 @@ import QBList from '../../components/QBList';
 import WelcomeDrop from '../../components/Welcome/WelcomeDrop';
 import './Master.css'
 
-import { DragDropContextProvider } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-
 class Master extends Component {
   
   state = {
@@ -70,7 +67,7 @@ class Master extends Component {
 
 
     return (
-      <DragDropContextProvider backend={HTML5Backend}>
+      
         <Grid fluid={true} bsClass={"body-container container"}>
           <UserNav />
             <Row bsClass="row h-100">
@@ -79,7 +76,7 @@ class Master extends Component {
             </Row>
           <UserNav footer={true}/>
         </Grid>
-      </DragDropContextProvider>
+      
     );
   }
 }
