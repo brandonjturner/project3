@@ -1,0 +1,22 @@
+.img-creator {
+  padding: 2%;
+  border: 2px solid orange;
+  display: inline-block;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.welcome-text-container {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
