@@ -3,7 +3,10 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import UserNav from '../../components/Navbar';
 import QBList from '../../components/QBList';
 import WelcomeDrop from '../../components/Welcome/WelcomeDrop';
-import './Master.css'
+import './Master.css';
+
+
+
 
 class Master extends Component {
   
