@@ -7,34 +7,14 @@ class QBList extends Component {
 
   
 
-  render() {
-
-    let sampleQbs = [
-      {
-        name: 'QB1',
-        stat1: '5%',
-        stat2: '5%',
-      },
-      {
-        name: 'QB2',
-        stat1: '6%',
-        stat2: '6%',
-      },
-      {
-        name: 'QB3',
-        stat1: '3%',
-        stat2: '3%',
-      },
-      {
-        name: 'QB4',
-        stat1: '2%',
-        stat2: '2%',
-    }];
+  render() {  
+    const { qblist } = this.props;
 
     return (
       <Grid fluid bsClass="qb-list container">
-      {sampleQbs.map(qb => {
+      {qblist.map(qb => {
         return <QB 
+        id={qb.name}
         name={qb.name}
         stat1={qb.stat1}
         stat2={qb.stat2}

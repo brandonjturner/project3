@@ -3,4 +3,8 @@
   margin: 3% 0 3% 0;
   width: 95%;
   padding: 0 5% 0 5%;
+  border: 1px solid rgba(223, 145, 0, 0.459);
+  box-shadow: 2px 2px 5px #140d1d;
+  transition: .3s;
+  
 }
