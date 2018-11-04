@@ -6,7 +6,6 @@ import ErrorPage from './pages/ErrorPage';
 import Guest from './pages/Guest';
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-
 import Master from './pages/Master'
 
 class App extends Component {
@@ -17,8 +16,8 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Master} />
-          <Route exact path="/guest" component={Auth}/>
-          <Route exact path="/auth" component={Guest}/> 
+          <Route exact path="/guest" component={Guest}/>
+          <Route exact path="/auth" component={Auth}/> 
           <Route component={ErrorPage}/>
         </Switch>
       </Router>
