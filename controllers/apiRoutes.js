@@ -56,11 +56,11 @@ module.exports = function(app) {
             res.json(err);
         });
     })
-};
+
 
 //-----******-----Calulate Defense Allowed Pocket Time-----*****----------******-----Calulate Defense Allowed Pocket Time-----*****-----
 
-module.exports = function(app) {
+
     
     app.get("/calculate/defense", function(req, res) {
         let tempDefArr = [];
@@ -116,10 +116,10 @@ module.exports = function(app) {
             res.json(err);
         });
     })
-};
+
 
 //-----******-----Calulate QB Pocket Time & Overall Accuracy-----*****----------******-----Calulate QB Pocket Time & Overall Accuracy-----*****-----
-module.exports = function(app) {
+
     
     app.get("/calculate/qbtime", function(req, res) {
 
@@ -196,10 +196,10 @@ module.exports = function(app) {
             res.json(err);
         });
     });
-}
+
 
 //-----******-----Calulate QB Defense Specific Accuracy-----*****----------******-----Calulate QB Defense Specific Accuracy-----*****-----
-module.exports = function(app) {
+
     
     app.get("/calculate/qbdefensetime", function(req, res) {
 
@@ -224,7 +224,7 @@ module.exports = function(app) {
                             //iterate through all Attempt Records
                             for (var k = 0; k < attemptRes.length; k++) {
                                 if (attemptRes[k].qbName === res[i].name &&
-                                    attemptRes[k].defenderName === defenseRes[j].name &&
+                                    // attemptRes[k].defenderName === defenseRes[j].name &&
                                     attemptRes[k].pocketTime <= defenseRes[j].givenPocketTime &&
                                     attemptRes[j].completion !== null) {
                                     
