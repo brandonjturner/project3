@@ -35,7 +35,7 @@ module.exports = function(app) {
     //gets record of specific quarterback
     app.get("/quarterback/:id", function (req, res) {
         db.Quarterback.find({
-                _id: req.params.id
+            _id: req.params.id
         }).then(function (dbQuarterback) {
             // console.log("Idunno");
             res.json(dbQuarterback)

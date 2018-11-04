@@ -73,6 +73,7 @@ app.use('/auth', require('./controllers'));
 require("./controllers/defenseController")(app);
 require("./controllers/attemptController")(app);
 require("./controllers/quarterbackController")(app);
+require("./controllers/userController")(app);
 require("./controllers/apiRoutes")(app);
 
 // ====== Error handler ====

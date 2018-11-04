@@ -6,6 +6,8 @@ const quarterbackSchema = new Schema({
     name: { type: String, unique: true },
     avgPocketTime: Number,
     completionPercentage: Number,
+    image: String,
+    currentTeam: String,
     vsDefenseCompletionPercentage: {
         "SF": Number,
         "CHI": Number,
