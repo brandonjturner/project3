@@ -12,7 +12,7 @@ const qbSeed = [
         name: "Patrick Mahomes II",
         avgPocketTime: 2.0,
         completionPercentage: 0.45,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08282018/30123.png",
         currentTeam: "KC",
         vsDefenseCompletionPercentage: {
             "ATL": 0.45,
@@ -53,7 +53,7 @@ const qbSeed = [
         name: "Andy Dalton",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222018/24822.png",
         currentTeam: "CIN",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -94,7 +94,7 @@ const qbSeed = [
         name: "Andrew Luck",
         avgPocketTime: 2.2,
         completionPercentage: 0.33,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09212017/25711.png",
         currentTeam: "IND",
         vsDefenseCompletionPercentage: {
             "ATL": 0.33,
@@ -135,7 +135,7 @@ const qbSeed = [
         name: "Tom Brady",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08272018/5228.png",
         currentTeam: "NE",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -176,7 +176,7 @@ const qbSeed = [
         name: "Drew Brees",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08252018/5479.png",
         currentTeam: "NO",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -217,7 +217,7 @@ const qbSeed = [
         name: "Eli Manning",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09242018/6760.png",
         currentTeam: "NYG",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -258,7 +258,7 @@ const qbSeed = [
         name: "Josh McCown",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08272018/5967.png",
         currentTeam: "NYJ",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -299,7 +299,7 @@ const qbSeed = [
         name: "Derek Anderson",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222017/7389.png",
         currentTeam: "BUF",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -340,7 +340,7 @@ const qbSeed = [
         name: "Philip Rivers",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08262018/6763.png",
         currentTeam: "LAC",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -381,7 +381,7 @@ const qbSeed = [
         name: "Aaron Rodgers",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/7200.png",
         currentTeam: "GB",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -422,7 +422,7 @@ const qbSeed = [
         name: "Ben Roethlisberger",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/6770.png",
         currentTeam: "PIT",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -463,7 +463,7 @@ const qbSeed = [
         name: "Alex Smith",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09302018/7177.png",
         currentTeam: "WAS",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -504,7 +504,7 @@ const qbSeed = [
         name: "Ryan Fitzpatrick",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09272018/7426.png",
         currentTeam: "TB",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -545,7 +545,7 @@ const qbSeed = [
         name: "Joe Flacco",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09272018/8795.png",
         currentTeam: "BAL",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -586,7 +586,7 @@ const qbSeed = [
         name: "Matt Ryan",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222018/8780.png",
         currentTeam: "ATL",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -627,7 +627,7 @@ const qbSeed = [
         name: "Matthew Stafford",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08272018/9265.png",
         currentTeam: "DET",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -668,7 +668,7 @@ const qbSeed = [
         name: "Cam Newton",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/24788.png",
         currentTeam: "CAR",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -709,7 +709,7 @@ const qbSeed = [
         name: "Ryan Tannehill",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09242018/25718.png",
         currentTeam: "MIA",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -750,7 +750,7 @@ const qbSeed = [
         name: "Kirk Cousins",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222018/25812.png",
         currentTeam: "MIN",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -791,7 +791,7 @@ const qbSeed = [
         name: "Nick Foles",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/25798.png",
         currentTeam: "PHI",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -832,7 +832,7 @@ const qbSeed = [
         name: "Case Keenum",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09122018/26483.png",
         currentTeam: "DEN",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -873,7 +873,7 @@ const qbSeed = [
         name: "Brock Osweiler",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09242018/25767.png",
         currentTeam: "MIA",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -914,7 +914,7 @@ const qbSeed = [
         name: "Russell Wilson",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/25785.png",
         currentTeam: "SEA",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -955,7 +955,7 @@ const qbSeed = [
         name: "Blake Bortles",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08232018/27531.png",
         currentTeam: "JAX",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -996,7 +996,7 @@ const qbSeed = [
         name: "Derek Carr",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09072018/27564.png",
         currentTeam: "OAK",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1037,7 +1037,7 @@ const qbSeed = [
         name: "Marcus Mariota",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08232018/28390.png",
         currentTeam: "TEN",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1078,7 +1078,7 @@ const qbSeed = [
         name: "Jameis Winston",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09272018/28389.png",
         currentTeam: "TB",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1119,7 +1119,7 @@ const qbSeed = [
         name: "Jared Goff",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09102018/29235.png",
         currentTeam: "LAR",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1160,7 +1160,7 @@ const qbSeed = [
         name: "Dak Prescott",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09272018/29369.png",
         currentTeam: "DAL",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1201,7 +1201,7 @@ const qbSeed = [
         name: "Carson Wentz",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/29236.png",
         currentTeam: "PHI",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1242,7 +1242,7 @@ const qbSeed = [
         name: "C.J. Beathard",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08202018/30217.png",
         currentTeam: "SF",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1283,7 +1283,7 @@ const qbSeed = [
         name: "Nathan Peterman",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08232018/30284.png",
         currentTeam: "BUF",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1324,7 +1324,7 @@ const qbSeed = [
         name: "Mitchell Trubisky",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08282018/30115.png",
         currentTeam: "CHI",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1365,7 +1365,7 @@ const qbSeed = [
         name: "Deshaun Watson",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08212018/30125.png",
         currentTeam: "HOU",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1406,7 +1406,7 @@ const qbSeed = [
         name: "Josh Allen",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08232018/30977.png",
         currentTeam: "BUF",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1447,7 +1447,7 @@ const qbSeed = [
         name: "Sam Darnold",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08272018/30973.png",
         currentTeam: "NYJ",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1488,7 +1488,7 @@ const qbSeed = [
         name: "Baker Mayfield",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09192018/30971.png",
         currentTeam: "CLE",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1529,7 +1529,7 @@ const qbSeed = [
         name: "Josh Rosen",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222018/30980.png",
         currentTeam: "ARI",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
@@ -1570,7 +1570,7 @@ const qbSeed = [
         name: "Nick Mullens",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08202018/30563.png",
         currentTeam: "SF",
         vsDefenseCompletionPercentage: {
             "ATL": 0.5,
