@@ -1,0 +1,67 @@
+.sign-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-card {
+  background-color: #322b3acc;
+  border: 1px solid rgba(223, 145, 0, 0.459);
+  box-shadow: 2px 2px 5px #140d1d;
+  padding: 5% 5% 8% 5%;
+}
+
+.sign-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-width {
+  max-width: 185px;
+
+  transition: .5s; 
+}
+
+.sign-in, .sign-in:disabled, .sign-in:active, .sign-in:focus, .sign-in:active:focus {
+  width: 185px;
+  height: 40px;
+  border: 1px solid rgb(226, 148, 2);
+  background: rgb(226, 148, 2);
+  border-radius: 0px;
+  color: white;
+  text-shadow: none;
+  transition-duration: .2s;
+  outline: none;
+}
+
+.sign-in:hover {
+  border: 1px solid rgb(226, 148, 2);
+  background-color: #3d2b52cc;
+  color: rgb(226, 148, 2);
+  text-shadow: none;
+  outline: none;
+}
+
+
+.sign-up, .sign-up:disabled, .sign-up:active, .sign-up:focus, .sign-up:active:focus {
+  width: 185px;
+  height: 40px;
+  border: 1px solid rgba(27, 177, 47, 0.753);
+  background: rgba(27, 177, 47, 0.753);
+  border-radius: 0px;
+  color: white;
+  text-shadow: none;
+  transition-duration: .2s;
+  outline: none;
+}
+
+.sign-up:hover {
+  border: 1px solid rgba(27, 177, 47, 0.753);
+  background-color: #3d2b52cc;
+  color: rgba(51, 172, 68, 0.753);
+  text-shadow: none;
+  outline: none;
+}

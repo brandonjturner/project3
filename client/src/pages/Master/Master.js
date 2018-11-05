@@ -3,7 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import UserNav from '../../components/Navbar';
 import QBList from '../../components/QBList';
 import WelcomeDrop from '../../components/Welcome/WelcomeDrop';
-import SignIn from '../../components/SignIn';
+import SignIn from '../../components/login';
 import './Master.css';
 
 
@@ -14,7 +14,7 @@ class Master extends Component {
   state = {
     curPageLeft: 'SignIn',
     curPageRight: 'Welcome',
-    QBList: {}
+    QBList: []
   }
   
   

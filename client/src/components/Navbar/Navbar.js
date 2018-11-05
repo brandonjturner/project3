@@ -5,14 +5,14 @@ class UserNav extends Component {
   render() {
     
     const header = (
-      <Navbar fixedTop inverse fluid pullLeft >
+      <Navbar fixedTop inverse fluid pullLeft bsClass="navbar">
         <Navbar.Header pullLeft>
           <Navbar.Brand>
             <a href="#">Football?</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav navbar pullLeft>
-          <NavItem href="#" pullLeft>
+          <NavItem href="#" pullLeft >
             Basic
           </NavItem>
           <NavItem href="#" pullLeft>

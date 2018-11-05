@@ -1,0 +1,46 @@
+.login-form-container {
+  background-color: #322b3acc;
+  border: 1px solid rgba(223, 145, 0, 0.459);
+  box-shadow: 2px 2px 5px #140d1d;
+  padding: 5% 5% 8% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-in, .sign-in:disabled, .sign-in:active, .sign-in:focus, .sign-in:active:focus {
+  width: 185px;
+  height: 40px;
+  border: 1px solid rgb(226, 148, 2);
+  background: rgb(226, 148, 2);
+  border-radius: 0px;
+  color: white;
+  text-shadow: none;
+  transition-duration: .2s;
+  outline: none;
+  margin-bottom: 5%;
+}
+
+.sign-in:hover {
+  border: 1px solid rgb(226, 148, 2);
+  background-color: #3d2b52cc;
+  color: rgb(226, 148, 2);
+  text-shadow: none;
+  outline: none;
+}
+
+.password-field {
+  margin-bottom: 15px;
+}
+
+.create-account-link {
+  font-size: .8em;
+  color: white;
+  transition-duration: .2s;
+}
+
+.create-account-link:hover {
+  text-decoration: none;
+  color: rgb(226, 148, 2);
+}

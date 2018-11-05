@@ -1,0 +1,45 @@
+.signup-form-container {
+  background-color: #322b3acc;
+  border: 1px solid rgba(223, 145, 0, 0.459);
+  box-shadow: 2px 2px 5px #140d1d;
+  padding: 5% 5% 8% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-up, .sign-up:disabled, .sign-up:active, .sign-up:focus, .sign-up:active:focus {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(27, 177, 47, 0.753);
+  background: rgba(27, 177, 47, 0.753);
+  border-radius: 0px;
+  color: white;
+  text-shadow: none;
+  transition-duration: .2s;
+  outline: none;
+}
+
+.sign-up:hover {
+  border: 1px solid rgba(27, 177, 47, 0.753);
+  background-color: #3d2b52cc;
+  color: rgba(51, 172, 68, 0.753);
+  text-shadow: none;
+  outline: none;
+}
+
+.login-link {
+  font-size: .8em;
+  color: white;
+  transition-duration: .2s;
+}
+
+.login-link:hover {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
+.create-account-link:hover {
+  text-decoration: none;
+}

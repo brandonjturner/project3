@@ -9,13 +9,22 @@
   padding-bottom: 50px;
 }
 
-a {
+.navbar {
+  color: white!important;
+  
+}
+
+.navbar-brand {
   color: white!important;
   transition-duration: .5s;
 }
 
 a:hover {
   color: rgb(226, 148, 2)!important;
+}
+
+.nav > li > a {
+  transition-duration: .5s;
 }
 
 .data-container {
