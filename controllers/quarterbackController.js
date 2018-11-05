@@ -35,7 +35,7 @@ module.exports = function(app) {
     //gets record of specific quarterback
     app.get("/quarterback/:id", function (req, res) {
         db.Quarterback.find({
-                _id: req.params.id
+            _id: req.params.id
         }).then(function (dbQuarterback) {
             // console.log("Idunno");
             res.json(dbQuarterback)
@@ -46,22 +46,22 @@ module.exports = function(app) {
     });
 
     // Update Average Pocket Time
-    app.put("/quarterback/:name/:defense", function(req, res) {
-        db.Quarterback.update({
-            avgPocketTime : {
-                defense: req.body.avgPocketTime
-            }
-        },
-        {
-                name: req.params.name
-        })
-        .then(function (data) {
-            res.status(200).end();
-        }).catch(function(err) {
-            // If an error occurs, send it back to the client
-            res.json(err);
-        });
-    });
+    // app.put("/quarterback/:name/:defense", function(req, res) {
+    //     db.Quarterback.update({
+    //         avgPocketTime : {
+    //             name: req.params.name
+    //         }
+    //     },
+    //     {
+    //         defense: req.body.avgPocketTime
+    //     })
+    //     .then(function (data) {
+    //         res.status(200).end();
+    //     }).catch(function(err) {
+    //         // If an error occurs, send it back to the client
+    //         res.json(err);
+    //     });
+    // });
 
     // Update Average Pocket Time
     app.put("/quarterback/:id", function(req, res) {
