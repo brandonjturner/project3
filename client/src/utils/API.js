@@ -17,5 +17,6 @@ export default {
 
   deleteUserQB: function (id) {
     return axios.delete("/api/user/qb/" + id);
-  }
+  },
+  
 };

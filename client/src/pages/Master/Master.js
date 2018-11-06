@@ -13,6 +13,26 @@ class Master extends Component {
     compareMode: false,
   };
 
+  toggleCompareMode = () => {
+    this.setState({compareMode: !this.state.compareMode});
+  }
+
+  toggleSaved = id => {
+    console.log(id);
+    this.setState({
+      ...this.state,
+      initialData: {
+        ...this.state.initialData,
+        qbs: {
+          ...this.state.initialData.qbs,
+          [id]: {
+            saved: !this.state.initialData.qbs[id].saved
+          }
+        }
+      }
+    })
+  }
+
   componentDidMount = () => {
     this.loadQBs();
   }
@@ -26,6 +46,7 @@ class Master extends Component {
         res.data.forEach((e, i) => {
           qbIds.push(`qb-${i + 1}`);
           e['id'] = `qb-${i + 1}`;
+          e['saved'] = false;
           qbs[`qb-${i + 1}`] = e;
         });
         
@@ -123,9 +144,9 @@ class Master extends Component {
   };
 
   render() {
-    const { qblist, compareMode, initialData } = this.state;
+    const { compareMode, initialData } = this.state;
     
-    if (initialData.qbs != undefined) {
+    if (initialData.qbs !== undefined) {
       console.log(initialData);
       const qbs1 = initialData.columns['column-1'].qbIds.map(qbId => initialData.qbs[qbId]);
       const qbs2 = initialData.columns['column-2'].qbIds.map(qbId => initialData.qbs[qbId]);
@@ -134,7 +155,7 @@ class Master extends Component {
       const basic = (
         <Row bsClass="row h-100 data-row">
           <Col md={6} bsClass="data-container data-left h-100 col">
-            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1}/>
+            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1} togglesaved={this.togglesaved}/>
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
             <WelcomeDrop key={initialData.columns['column-2'].id} column={initialData.columns['column-2']} qbs={qbs2}/>
@@ -158,7 +179,7 @@ class Master extends Component {
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav />
+            <UserNav toggleCompareMode={this.toggleCompareMode} compareMode={this.state.compareMode}/>
             {compareMode ? compare : basic}
             <UserNav footer={true} />
           </Grid>
@@ -172,7 +193,7 @@ class Master extends Component {
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav />
+            <UserNav toggleCompareMode={this.toggleCompareMode}/>
               <Row bsClass="row h-100">
                 loading
               </Row>

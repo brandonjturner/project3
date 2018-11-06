@@ -11,21 +11,26 @@ class SignupForm extends Component {
       username: '',
       password: '',
       confirmPassword: '',
-      redirectTo: null
+      redirectTo: null,
+      goodData: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
+
   handleChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value.trim()
     });
   }
+
   handleSubmit(event) {
     console.log(this.state.username);
     console.log(this.state.password);
     event.preventDefault();
-    axios
+
+    if (this.validatePassword() === 'success' && this.validateUsername() === 'success' && this.confirmPassword() === 'success') {
+      axios
       .post('/auth/signup', {
         username: this.state.username,
         password: this.state.password
@@ -35,13 +40,52 @@ class SignupForm extends Component {
         if (!response.data.errmsg) {
           console.log('youre good');
           this.setState({
-            redirectTo: '/login'
+            redirectTo: '/auth'
           });
         } else {
           console.log('duplicate');
         }
       });
+    } else {
+      console.log("Bad Data");
+    }
   }
+
+  validateUsername() {
+    const length = this.state.username.length;
+    if (length <= 0) {
+      return 'error';
+    }
+    else {
+      return 'success';
+    }
+  }
+
+  validatePassword() {
+    const length = this.state.password.length;
+    if (length <= 0) {
+      return 'error';
+    }
+    else {
+      return 'success';
+    }
+  }
+
+  confirmPassword() {
+    const password = this.state.password;
+    const confirm = this.state.confirmPassword;
+
+    if (password !== confirm) {
+      return 'error';
+    }
+    else {
+      return 'success';
+    }
+  }
+
+
+
+
   render() {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />;
@@ -50,7 +94,9 @@ class SignupForm extends Component {
       <div className="signup-form-container">
         <form action="">
           <h1>Sign Up</h1>
-          <FormGroup>
+          <FormGroup
+          validationState={this.validateUsername()}
+          >
             <FormControl
               type="text"
               name="username"
@@ -59,7 +105,9 @@ class SignupForm extends Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup
+          validationState={this.validatePassword()}
+          >
             <FormControl
               type="password"
               name="password"
@@ -68,7 +116,9 @@ class SignupForm extends Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup
+          validationState={this.confirmPassword()}
+          >
             <FormControl
               type="password"
               name="confirmPassword"

@@ -2,6 +2,8 @@
   padding: 2%;
   border: 2px solid rgba(223, 145, 0, 0.459);
   display: inline-block;
+  width: 150px;
+  
 }
 
 .title {
@@ -20,6 +22,11 @@
   overflow-y: scroll;
   overflow-x: hidden;
   direction: rtl;
+}
+
+.welcome-row{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .qb-info-list {

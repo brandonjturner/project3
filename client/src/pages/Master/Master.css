@@ -6,11 +6,12 @@
 
 .data-row {
   min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .row {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  
 }
 
 .navbar {

@@ -19,7 +19,9 @@
     "passport-local": "^1.0.0",
     "react": "^16.6.0",
     "react-beautiful-dnd": "^9.0.2",
-    "react-bootstrap": "^0.32.4"
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "16.5.2",
+    "styled-components": "^4.0.3"
   },
   "babel": {
     "plugins": [

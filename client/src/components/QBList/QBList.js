@@ -7,7 +7,8 @@ import './QBList.css';
 class QBList extends Component {
 
   render() {  
-    const { qbs } = this.props;
+    const { qbs, togglesaved } = this.props;
+    console.log(togglesaved);
     console.log(qbs);
     return (
       <Droppable droppableId={this.props.column.id}>
@@ -26,6 +27,9 @@ class QBList extends Component {
                 index={index}
                 id={qb.id}
                 name={qb.name}
+                currentCol={this.props.column.id}
+                saved={qb.saved}
+                togglesaved={this.props.togglesaved}
                 />
               })}
               {provided.placholder}

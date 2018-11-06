@@ -1,5 +1,4 @@
 .qb-row {
-  background-color: #322b3acc;
   margin: 0 0 10px 0;
   width: 95%;
   padding: 5px 10px;
@@ -7,7 +6,32 @@
   padding-bottom: 10px!important;
   border: 1px solid rgba(223, 145, 0, 0.459);
   box-shadow: 2px 2px 5px #140d1d;
-  min-height: 100px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.drag-color {
+  background-color: black;
+}
+
+.save-qb-button {
+  background-color: rgba(85, 33, 105, 0.952);
+  color: rgba(255, 255, 255, 0.616);
+  border: 1px solid rgba(255, 255, 255, 0.37);
+  padding: 5px 10px;
+}
+
+.saved-qb-button {
+  background-color: rgba(155, 0, 0, 0.952);
+  color: rgba(255, 255, 255, 0.801);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 5px 10px;
+  font-size: .85em;
+}
+
+.qb-img-prev {
+  height: 50px;
 }
 
 .qb-img {

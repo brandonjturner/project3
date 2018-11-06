@@ -4,6 +4,10 @@ import { Droppable } from 'react-beautiful-dnd';
 import { Grid } from 'react-bootstrap';
 import QB from '../QBList/QB';
 
+
+
+
+
 class WelcomeDrop extends Component {
 
   state = {
@@ -26,7 +30,7 @@ class WelcomeDrop extends Component {
           {...provided.droppableProps}
           isDraggingOver={snapshot.isDraggingOver}
           >
-            <Welcome>
+            <Welcome isdraggingover={snapshot.isDraggingOver}>
               {this.props.children}
             </Welcome>
           </div>
@@ -48,6 +52,7 @@ class WelcomeDrop extends Component {
                   index={index}
                   id={qb.id}
                   name={qb.name}
+                  currentCol={this.props.column.id}
                   />
                 })}
               {provided.placholder}

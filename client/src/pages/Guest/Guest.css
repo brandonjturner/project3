@@ -1,0 +1,18 @@
+.guest-data-container {
+  background-color: #2b2730;
+  height: 100%;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.guest-welcome {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}

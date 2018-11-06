@@ -12,9 +12,13 @@ class LoginForm extends Component {
 			password: '',
 			redirectTo: null
 		}
-		
+	}
+
+	login = (username, password) => {
 		
 	}
+
+
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
@@ -23,10 +27,10 @@ class LoginForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault()
-		console.log('handleSubmit')
-		this.props._login(this.state.username, this.state.password)
+		console.log('handleSubmit');
+		this.login(this.state.username, this.state.password);
 		this.setState({
-			redirectTo: '/'
+			redirectTo: '/auth'
 		})
 	}
 	render() {
