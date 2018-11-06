@@ -95,7 +95,7 @@ module.exports = function(app) {
                         "name": res[i].name
                     },
                     {
-                        $set: { "givenPocketTime": arrAvg }
+                        $set: { "givenPocketTime": arrAvg.toFixed(3) }
                     })
                     .then(updateRes => console.log(updateRes))
                     .catch(function(err) {
@@ -144,7 +144,7 @@ module.exports = function(app) {
                             tempQBAccArr.push(attemptRes[j].competion);
                         }
                     }
-                    console.log(res[i].name, tempQBAccArr);
+                    // console.log(res[i].name, tempQBAccArr);
 
                     //check if tempQBArr has data.  If not, auto enter 6 seconds.  otherwise average tempQBArr numbers
                     if (tempQBArr.length === 0) {
@@ -153,7 +153,7 @@ module.exports = function(app) {
                     else {
                         arrAvg  = tempQBArr.reduce((a,b) => a + b, 0) / tempQBArr.length;
                     }
-                    console.log(arrAvg);
+                    // console.log(arrAvg);
 
                     //check if tempQBAccArr has data.  If not, auto enter .5 percent.  otherwise divide true items in accArrAvg by accArrAvg length
                     if (tempQBAccArr.length === 0) {
@@ -175,7 +175,7 @@ module.exports = function(app) {
                     },
                     {
                         $set: { "avgPocketTime": arrAvg },
-                        $set: { "completionPercentage": accArrAvg}
+                        $set: { "completionPercentage": accArrAvg.toFixed(3)}
                     })
                     .then(updateRes => console.log(updateRes))
                     .catch(function(err) {
@@ -242,7 +242,7 @@ module.exports = function(app) {
                                     if(tempQBDefArr[k] === true)
                                     trueCount2++;
                                 }
-                                accArrDefRatio = trueCount2/tempQBDefArr.length
+                                accArrDefRatio = (trueCount2/tempQBDefArr.length).toFixed(2);
                             }
 
                             setName = "vsDefenseCompletionPercentage." + defenseRes[j].name;
