@@ -1,0 +1,60 @@
+.comparea-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  max-height: 89.5vh;
+  min-height: 89.5vh;
+  padding: 7% 0px 0px 5%;
+  direction: rtl;
+}
+
+.compare-nav {
+  background-color: #4d381d1e;
+  position: fixed;
+  top: 50px;
+  height: 50px;
+  width: 100%;
+  
+  transition: background-color .2s ease;
+}
+
+.compare-nav:hover {
+  background-color:#E29402;
+}
+
+.dropdown > .dropdown-menu > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.705);
+  color: black!important;
+  background-image: none;
+}
+
+.dropdown > .dropdown-menu > li > a {
+  color: rgba(255, 255, 255, 0.849);
+  
+}
+
+.dropdown > .dropdown-menu {
+  margin-left: 20px;
+  margin-top: 15px;
+  width: 200px;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  background-color: #312A38;
+  color: white;
+  background-image: none;
+  padding: 0;
+}
+
+.compare-form, .dropdown > button, .dropdown > button:active, .dropdown > button:hover, .dropdown > button:focus {
+  width: 200px;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.863)!important;
+  background-image: none!important;
+  border: 1px solid rgba(255, 255, 255, 0.781); 
+  background-color: #312A38!important;
+  text-shadow: none;
+}
+

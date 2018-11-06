@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import './Navbar.css';
 import styled from 'styled-components';
 
@@ -11,18 +12,30 @@ const Compare = styled.button`
 class UserNav extends Component {
 
   state = {
-    currentUser: 'placeholder'
+    currentUser: 'placeholder',
+    signedIn: false,
+    redirectTo: null
   }
 
   componentDidMount = () => {
     if (this.props.placeholder === false) {
       this.setState({ currentUser: ''});
     }
+    else {
+      this.setState({ signedIn: true });
+    }
+  }
+
+  signOut = e => {
+    e.preventDefault();
+    this.setState({redirectTo: '/'});
   }
 
   render() {
 
-
+    if (this.state.redirectTo && this.state.signedIn === true) {
+      return <Redirect to={{pathname: this.state.redirectTo}} />;
+    }
     
     const header = (
       <Navbar fixedTop inverse fluid pullLeft>
@@ -33,14 +46,14 @@ class UserNav extends Component {
         </Navbar.Header>
         <Nav navbar pullLeft>
           <div className="compare-toggle-container">
-            <Compare className="compare-button" onClick={this.props.toggleCompareMode} compareMode={this.props.compareMode}>Compare Mode</Compare>
+            {this.props.placeholder === false ? '' : <Compare className="compare-button" onClick={this.props.toggleCompareMode} compareMode={this.props.compareMode}>Compare Mode</Compare>}
           </div>
         </Nav>
         <Nav navbar pullRight bsClass="logout-button-container nav">
           <div className="user-container">
             <div className="username">{this.state.currentUser}</div>
             <div className="h-100" style={{minHeight: "50px"}}>
-              <button className="logout-button">Sign Out</button>
+              {this.props.placeholder === false ? '' : <button className="logout-button" onClick={this.signOut}>Sign Out</button>}
             </div>
           </div>
         </Nav>
