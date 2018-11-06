@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import UserNav from '../../components/Navbar';
 import WelcomeDrop from '../../components/Welcome/WelcomeDrop';
+import GuestWelcome from './GuestWelcome';
 import SignIn from '../../components/login';
 import '../Master/Master.css';
 
@@ -17,7 +18,7 @@ class Guest extends Component {
             <SignIn />
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
-            <WelcomeDrop />
+            <GuestWelcome />
           </Col>
         </Row>
         <UserNav footer={true} />
