@@ -2,7 +2,9 @@
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
-  padding: 0px 0px 0px 5%;
+  max-height: 89.5vh;
+  min-height: 89.5vh;
+  padding: 3% 0px 0px 5%;
 }
 
 ::-webkit-scrollbar {

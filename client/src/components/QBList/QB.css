@@ -1,10 +1,21 @@
 .qb-row {
   background-color: #322b3acc;
-  margin: 3% 0 3% 0;
+  margin: 0 0 10px 0;
   width: 95%;
-  padding: 0 5% 0 5%;
+  padding: 5px 10px;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
   border: 1px solid rgba(223, 145, 0, 0.459);
   box-shadow: 2px 2px 5px #140d1d;
-  transition: .3s;
-  
+  min-height: 100px;
+}
+
+.qb-img {
+  height: 100px;
+}
+
+.qb-img-container {
+  display: inline-block;
+  background-color: #2a262eaf;
+  border: 1px solid #1310168f;
 }

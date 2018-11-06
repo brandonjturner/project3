@@ -33,13 +33,13 @@ class SignIn extends Component {
       <Grid fluid bsClass="h-100 sign-card-container container">
         <div className="sign-card">
           <div className="sign-container">
-            <h2 style={{"margin-bottom": "20px"}}>Welcome</h2>
+            <h2 style={{"marginBottom": "20px"}}>Welcome</h2>
             <Button onClick={this.handleSignIn} bsClass="sign-in btn">Sign In</Button>
             <a href="/auth/google">
 						{/* <GoogleButton /> */}
 						  <img src={googleButton} alt="sign into Google Button" />
 				  	</a>
-            <h4 style={{"margin-bottom": "20px"}}>Need an Account?</h4>
+            <h4 style={{"marginBottom": "20px"}}>Need an Account?</h4>
             <Button onClick={this.handleSignUp} bsClass="sign-up btn">Sign Up</Button>
           </div>
         </div>

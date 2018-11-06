@@ -5,17 +5,17 @@ class UserNav extends Component {
   render() {
     
     const header = (
-      <Navbar fixedTop inverse fluid pullLeft bsClass="navbar">
+      <Navbar fixedTop inverse fluid pullLeft>
         <Navbar.Header pullLeft>
           <Navbar.Brand>
-            <a href="#">Football?</a>
+            <a href="/">Blitz Report</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav navbar pullLeft>
-          <NavItem href="#" pullLeft >
+          <NavItem href="/#" pullLeft >
             Basic
           </NavItem>
-          <NavItem href="#" pullLeft>
+          <NavItem href="/#" pullLeft>
             Advanced
           </NavItem>
         </Nav>

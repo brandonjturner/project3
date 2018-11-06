@@ -12,16 +12,16 @@ class LoginForm extends Component {
 			password: '',
 			redirectTo: null
 		}
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
+		
+		
 	}
-	handleChange(event) {
+	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
-		})
+		});
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault()
 		console.log('handleSubmit')
 		this.props._login(this.state.username, this.state.password)
@@ -40,6 +40,7 @@ class LoginForm extends Component {
 						<FormGroup>
 							<FormControl
 							type="text"
+							name="username"
 							placeholder={'Username'}
 							value={this.state.username}
 							onChange={this.handleChange}
@@ -48,12 +49,13 @@ class LoginForm extends Component {
 						<FormGroup bsClass="password-field form-group">
 							<FormControl
 							type="password"
+							name="password"
 							placeholder={'Password'}
 							value={this.state.password}
 							onChange={this.handleChange}
 							/>
 							<HelpBlock>
-								<a className="create-account-link" onClick={this.props.signupRedirect} href="#">Create an account</a>
+								<a className="create-account-link" onClick={this.props.signupRedirect} href="/#">Create an account</a>
 							</HelpBlock>
 						</FormGroup>
 						<button className="sign-in" onClick={this.handleSubmit}>Sign in</button>

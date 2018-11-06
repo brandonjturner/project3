@@ -22,6 +22,8 @@ class SignupForm extends Component {
     });
   }
   handleSubmit(event) {
+    console.log(this.state.username);
+    console.log(this.state.password);
     event.preventDefault();
     axios
       .post('/auth/signup', {
@@ -75,7 +77,7 @@ class SignupForm extends Component {
               onChange={this.handleChange}
             />
 						<HelpBlock>
-							<a className="login-link" onClick={this.props.signinRedirect} href="#">Already have one?</a>
+							<a className="login-link" onClick={this.props.signinRedirect} href="/#">Already have one?</a>
 				  	</HelpBlock>
           </FormGroup>
         </form>

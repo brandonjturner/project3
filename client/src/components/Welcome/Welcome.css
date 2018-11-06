@@ -4,12 +4,30 @@
   display: inline-block;
 }
 
+.title {
+  font-size: 8em;
+  letter-spacing: 8px;
+  margin-bottom: 30px;
+}
 .welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  min-height: 89.5vh;
+  max-height: 89.5vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.qb-info-list {
+  direction: ltr;
+  height: 100%;
+  max-height: 89.5vh;
+  min-height: 89.5vh;
+  padding: 3% 0px 0px 5%;
 }
 
 .welcome-text-container {
