@@ -23,10 +23,10 @@ class FavList extends Component {
             fluid bsClass="qb-list h-100 container">
               {qbs.map((qb, index) => {
                 return <QB
-                key={qb.favId}
+                key={qb.id}
                 qb={qb}
                 index={index}
-                id={qb.favId}
+                id={qb.id}
                 name={qb.name}
                 currentCol={this.props.column.id}
                 saved={qb.saved}

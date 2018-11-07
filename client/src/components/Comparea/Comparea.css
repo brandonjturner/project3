@@ -14,7 +14,7 @@
   top: 50px;
   height: 50px;
   width: 100%;
-  
+  z-index: 1;
   transition: background-color .2s ease;
 }
 
@@ -43,6 +43,9 @@
   color: white;
   background-image: none;
   padding: 0;
+  max-height: 250px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .compare-form, .dropdown > button, .dropdown > button:active, .dropdown > button:hover, .dropdown > button:focus {
@@ -57,4 +60,6 @@
   background-color: #312A38!important;
   text-shadow: none;
 }
+
+
 
