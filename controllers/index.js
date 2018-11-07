@@ -55,9 +55,12 @@ router.post('/logout', (req, res) => {
 
 router.post('/signup', (req, res) => {
 	const { username, password } = req.body;
-	console.log("test");
+	console.log('is this a username', req.body.username);
 	// ADD VALIDATION
-	User.findOne({ 'local.username': username }, (err, userMatch) => {
+	User.findOne({ local: {
+		username: username
+	}}, (err, userMatch) => {
+		console.log(userMatch);
 		if (userMatch) {
 			return res.json({
 				error: `Sorry, already a user with the username: ${username}`
