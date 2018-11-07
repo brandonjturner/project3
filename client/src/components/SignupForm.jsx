@@ -25,8 +25,8 @@ class SignupForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state.username);
-    console.log(this.state.password);
+    //console.log(this.state.username);
+    //console.log(this.state.password);
     event.preventDefault();
 
     if (this.validatePassword() === 'success' && this.validateUsername() === 'success' && this.confirmPassword() === 'success') {
@@ -38,18 +38,35 @@ class SignupForm extends Component {
       .then(response => {
         console.log(response);
         if (!response.data.error) {
-          console.log('youre good');
+          axios
+			      .post('auth/login', {
+				    username: this.state.username,
+				    password: this.state.password
+			    })
+			    .then(response => {
+				    console.log('login response: ');
+				    console.log(response);
 
+				    if (response.status === 200) {
+					    const { user } = response.data;
+					    //console.log(user);
+              this.props.loginUser(user);
+              console.log('youre good');
+              this.setState({ redirectTo: '/auth' });
+				    }
+			    })
+          .catch(error => {
+            console.log('login error: ');
+            console.log(error);
+          })
+        } 
         
-          this.setState({
-            redirectTo: '/auth'
-          });
-        } else {
-          console.log('duplicate');
+        else {
+          console.log('Duplicate User');
         }
       });
     } else {
-      console.log("Bad Data");
+      console.log("Invalid Sign Up Data");
     }
   }
 

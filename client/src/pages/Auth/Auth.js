@@ -16,9 +16,11 @@ class Auth extends Component {
         //console.log(response);
         const { user } = response.data;
         if (user === null) {
+          console.log('Auth setting redirect')
           this.setState({ redirectTo: '/' });
         } 
         else {
+          console.log('Auth logging in user');
           this.props.loginUser(user);
         }
       });
