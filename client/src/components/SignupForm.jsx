@@ -37,8 +37,10 @@ class SignupForm extends Component {
       })
       .then(response => {
         console.log(response);
-        if (!response.data.errmsg) {
+        if (!response.data.error) {
           console.log('youre good');
+
+        
           this.setState({
             redirectTo: '/auth'
           });

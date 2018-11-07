@@ -48,13 +48,13 @@ class SignIn extends Component {
 
     const SignInForm = (
       <Grid fluid bsClass="h-100 sign-card-container container">
-        <LoginForm signupRedirect={this.handleSignUp}/>
+        <LoginForm signupRedirect={this.handleSignUp} {...this.props} />
       </Grid>
     );
 
     const SignUpForm = (
       <Grid fluid bsClass="h-100 sign-card-container container">
-        <SignupForm signinRedirect={this.handleSignIn}/>
+        <SignupForm signinRedirect={this.handleSignIn} {...this.props} />
       </Grid>
     );
 

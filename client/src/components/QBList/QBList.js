@@ -8,8 +8,8 @@ class QBList extends Component {
 
   render() {  
     const { qbs, togglesaved } = this.props;
-    console.log(togglesaved);
-    console.log(qbs);
+    //console.log(togglesaved);
+    //console.log(qbs);
     return (
       <Droppable droppableId={this.props.column.id}>
         {(provided, snapshot) => (
