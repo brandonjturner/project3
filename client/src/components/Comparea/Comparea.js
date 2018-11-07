@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
-import QB from './QB';
+import './Comparea.css';
 import { Droppable } from 'react-beautiful-dnd';
-import './QBList.css';
+import QB from '../QBList/QB';
+import { Grid } from 'react-bootstrap';
 
-class QBList extends Component {
 
-  render() {  
-    const { qbs, togglesaved } = this.props;
-    console.log(togglesaved);
-    console.log(qbs);
+class Comparea extends Component {
+
+
+  render() {
+    
+    const { qbs } = this.props;
+
     return (
       <Droppable droppableId={this.props.column.id}>
         {(provided, snapshot) => (
@@ -19,19 +21,20 @@ class QBList extends Component {
           isDraggingOver={snapshot.isDraggingOver}
           >
             <Grid
-            fluid bsClass="qb-list h-100 container">
-              {qbs.map((qb, index) => {
+            fluid bsClass="comparea-list h-100 container">
+              <div style={{"direction": "ltr"}}>
+                {qbs.map((qb, index) => {
                 return <QB
-                key={qb.id}
+                key={qb.favId}
                 qb={qb}
                 index={index}
-                id={qb.id}
+                id={qb.favId}
                 name={qb.name}
                 currentCol={this.props.column.id}
                 saved={qb.saved}
-                togglesaved={this.props.togglesaved}
                 />
-              })}
+                })}
+              </div>
               {provided.placeholder}
             </Grid>
           </div>
@@ -41,4 +44,4 @@ class QBList extends Component {
   }
 }
 
-export default QBList;
+export default Comparea;

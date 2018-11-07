@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Master from '../Master';
 
 class Auth extends Component {
 
   render() {
-    return <p>Auth</p>
+    return <Master />
   }
 }
 

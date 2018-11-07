@@ -12,7 +12,7 @@ const qbSeed = [
         name: "Patrick Mahomes",
         avgPocketTime: 2.0,
         completionPercentage: 0.45,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08282018/30123.png",
         currentTeam: "KC",
         vsDefenseCompletionPercentage: {
             "ATL": 0.45,
@@ -53,7 +53,7 @@ const qbSeed = [
         name: "Andy Dalton",
         avgPocketTime: 1.8,
         completionPercentage: 0.5,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/08222018/24822.png",
         currentTeam: "CIN",
         vsDefenseCompletionPercentage: {
             "ATL": 0.45,
@@ -94,7 +94,7 @@ const qbSeed = [
         name: "Andrew Luck",
         avgPocketTime: 2.2,
         completionPercentage: 0.33,
-        image: "",
+        image: "https://s.yimg.com/xe/i/us/sp/v/nfl_cutout/players_l/09212017/25711.png",
         currentTeam: "IND",
         vsDefenseCompletionPercentage: {
             "ATL": 0.45,
@@ -130,7 +130,8 @@ const qbSeed = [
             "TEN": 0.45,
             "WAS": 0.45,
         }
-    }
+    },
+    
 ];
 
 db.Quarterback

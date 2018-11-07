@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import './App.css';
 import Auth from './pages/Auth';
 import ErrorPage from './pages/ErrorPage';
 import Guest from './pages/Guest';
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import Master from './pages/Master'
 
 class App extends Component {
   
@@ -15,8 +11,7 @@ class App extends Component {
     return(
       <Router>
         <Switch>
-          <Route exact path="/" component={Master} />
-          <Route exact path="/guest" component={Guest}/>
+          <Route exact path="/" component={Guest} />
           <Route exact path="/auth" component={Auth}/> 
           <Route component={ErrorPage}/>
         </Switch>

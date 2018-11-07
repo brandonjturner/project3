@@ -17,7 +17,7 @@ module.exports = function(app) {
     });
 
     // Route for getting all quarterback from the db
-    app.get("/quarterback", function(req, res) {
+    app.get("/api/QBs", function(req, res) {
         // console.log("stuff");
         // Using our quarterback model, "find" every quarterback in our db
         db.Quarterback.find({})

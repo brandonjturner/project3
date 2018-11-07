@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
+import './LoginForm.css';
+import { FormGroup, HelpBlock, FormControl } from 'react-bootstrap';
+
 class LoginForm extends Component {
 	constructor() {
 		super()
@@ -9,20 +12,25 @@ class LoginForm extends Component {
 			password: '',
 			redirectTo: null
 		}
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
 	}
-	handleChange(event) {
+
+	login = (username, password) => {
+		
+	}
+
+
+	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
-		})
+		});
 	}
-	handleSubmit(event) {
+
+	handleSubmit = (event) => {
 		event.preventDefault()
-		console.log('handleSubmit')
-		this.props._login(this.state.username, this.state.password)
+		console.log('handleSubmit');
+		this.login(this.state.username, this.state.password);
 		this.setState({
-			redirectTo: '/'
+			redirectTo: '/auth'
 		})
 	}
 	render() {
@@ -30,24 +38,31 @@ class LoginForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		} else {
 			return (
-				<div className="LoginForm">
-					<h1>Login form</h1>
+				<div className="login-form-container">
 					<form>
-						<label htmlFor="username">Username: </label>
-						<input
+						<h2>Sign In</h2>
+						<FormGroup>
+							<FormControl
 							type="text"
 							name="username"
+							placeholder={'Username'}
 							value={this.state.username}
 							onChange={this.handleChange}
-						/>
-						<label htmlFor="password">Password: </label>
-						<input
+							/>
+						</FormGroup>
+						<FormGroup bsClass="password-field form-group">
+							<FormControl
 							type="password"
 							name="password"
+							placeholder={'Password'}
 							value={this.state.password}
 							onChange={this.handleChange}
-						/>
-						<button onClick={this.handleSubmit}>Login</button>
+							/>
+							<HelpBlock>
+								<a className="create-account-link" onClick={this.props.signupRedirect} href="/#">Create an account</a>
+							</HelpBlock>
+						</FormGroup>
+						<button className="sign-in" onClick={this.handleSubmit}>Sign in</button>
 					</form>
 					<a href="/auth/google">
 						{/* <GoogleButton /> */}
@@ -58,4 +73,4 @@ class LoginForm extends Component {
 		}
 	}
 }
-export default LoginForm
+export default LoginForm;
