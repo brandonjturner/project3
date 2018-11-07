@@ -25,16 +25,24 @@ app.use(
 app.use(bodyParser.json())
 app.use(
 	session({
-		secret: process.env.APP_SECRET || 'this is the default passphrase',
+		secret: process.env.APP_SECRET || 'mergen-shmergen',
 		store: new MongoStore({ mongooseConnection: dbConnection }),
 		resave: false,
 		saveUninitialized: false
 	})
 )
 
+
 // ===== Passport ====
 app.use(passport.initialize())
 app.use(passport.session()) // will call the deserializeUser
+
+app.use( (req, res, next) => {
+	console.log('req.session', req.session);
+
+	return next();
+});
+
 
 // ===== testing middleware =====
 // app.use(function(req, res, next) {

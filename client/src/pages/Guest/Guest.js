@@ -12,10 +12,10 @@ class Guest extends Component {
 
     return (
       <Grid fluid={true} bsClass={'body-container container'}>
-        <UserNav placeholder={false}/>
+        <UserNav placeholder={false} {...this.props}/>
         <Row bsClass="row h-100">
           <Col md={6} bsClass="guest-data-container data-left h-100 col">
-            <SignIn />
+            <SignIn {...this.props}/>
           </Col>
           <Col md={6} bsClass="guest-data-container data-right h-100 col">
             <GuestWelcome isdraggingover={false}/>

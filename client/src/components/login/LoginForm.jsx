@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import googleButton from './google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png'
 import './LoginForm.css';
 import { FormGroup, HelpBlock, FormControl } from 'react-bootstrap';
+import axios from 'axios';
 
 class LoginForm extends Component {
 	constructor() {
@@ -15,7 +16,29 @@ class LoginForm extends Component {
 	}
 
 	login = (username, password) => {
-		
+		axios
+			.post('auth/login', {
+				username: username,
+				password: password
+			})
+			.then(response => {
+				console.log('login response: ');
+				console.log(response);
+
+				if (response.status === 200) {
+					const { user } = response.data;
+					//console.log(user);
+					this.props.loginUser(user);
+
+					this.setState({
+						redirectTo: '/auth'
+					});
+				}
+			})
+			.catch(error => {
+				console.log('login error: ');
+				console.log(error);
+			})
 	}
 
 
@@ -29,9 +52,6 @@ class LoginForm extends Component {
 		event.preventDefault()
 		console.log('handleSubmit');
 		this.login(this.state.username, this.state.password);
-		this.setState({
-			redirectTo: '/auth'
-		})
 	}
 	render() {
 		if (this.state.redirectTo) {

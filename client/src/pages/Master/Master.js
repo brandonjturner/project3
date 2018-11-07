@@ -87,7 +87,7 @@ class Master extends Component {
   loadFavs = () => {
     const qbIds = ['qb-2', 'qb-1'];
 
-    console.log(dummyFavs);
+    //console.log(dummyFavs);
     this.setState({ 
       ...this.state,
       initialData: {
@@ -186,10 +186,10 @@ class Master extends Component {
     const { compareMode, initialData } = this.state;
     
     if (initialData.qbs !== undefined && initialData.columns['column-3'] !== undefined) {
-      console.log(initialData);
+      //console.log(initialData);
       const qbs1 = initialData.columns['column-1'].qbIds.map(qbId => initialData.qbs[qbId]);
       const qbs2 = initialData.columns['column-2'].qbIds.map(qbId => initialData.qbs[qbId]);
-      console.log(initialData.columns);
+      //console.log(initialData.columns);
       const qbs3 = initialData.columns['column-3'].qbIds.map(qbId => initialData.qbs[qbId]);
       const qbs4 = initialData.columns['column-4'].qbIds.map(qbId => initialData.qbs[qbId]);
 
@@ -242,7 +242,7 @@ class Master extends Component {
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav toggleCompareMode={this.toggleCompareMode} compareMode={this.state.compareMode}/>
+            <UserNav toggleCompareMode={this.toggleCompareMode} compareMode={this.state.compareMode} {...this.props}/>
             {compareMode ? compare : basic}
             <UserNav footer={true} />
           </Grid>
@@ -250,13 +250,13 @@ class Master extends Component {
       );
     }
     else {
-      console.log(initialData);
+      //console.log(initialData);
       return (
         <DragDropContext 
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav toggleCompareMode={this.toggleCompareMode}/>
+            <UserNav toggleCompareMode={this.toggleCompareMode} {...this.props}/>
               <Row bsClass="row h-100">
                 loading
               </Row>

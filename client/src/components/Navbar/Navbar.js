@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import './Navbar.css';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Compare = styled.button`
   background-color: ${props => props.compareMode ? 'rgba(226, 148, 2, 0.836)' : 'none'};
@@ -12,14 +13,26 @@ const Compare = styled.button`
 class UserNav extends Component {
 
   state = {
-    currentUser: 'placeholder',
+    userName: '',
     signedIn: false,
     redirectTo: null
   }
 
-  componentDidMount = () => {
+  componentWillReceiveProps = () => {
+    axios
+      .get('/auth/user')
+      .then(response => {
+        console.log(response);
+        const { user } = response.data;
+        if (user === null) {
+          this.setState({userName: ''});
+        } 
+        else {
+          this.setState({userName: user.username});
+        }
+      });
     if (this.props.placeholder === false) {
-      this.setState({ currentUser: ''});
+      this.setState({userName: ''});
     }
     else {
       this.setState({ signedIn: true });
@@ -28,6 +41,14 @@ class UserNav extends Component {
 
   signOut = e => {
     e.preventDefault();
+    axios
+      .post('auth/logout', {})
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
+      })
     this.setState({redirectTo: '/'});
   }
 
@@ -51,7 +72,7 @@ class UserNav extends Component {
         </Nav>
         <Nav navbar pullRight bsClass="logout-button-container nav">
           <div className="user-container">
-            <div className="username">{this.state.currentUser}</div>
+            <div className="username">{this.state.userName}</div>
             <div className="h-100" style={{minHeight: "50px"}}>
               {this.props.placeholder === false ? '' : <button className="logout-button" onClick={this.signOut}>Sign Out</button>}
             </div>

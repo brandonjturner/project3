@@ -6,13 +6,46 @@ import Guest from './pages/Guest';
 
 class App extends Component {
   
+  state = {
+    user: null,
+    loggedIn: false
+  }
+
+  loginUser = (user) => {
+    console.log('User logged in.');
+    this.setState({
+      user: user,
+      loggedIn: true
+    });
+  }
+
+  logoutUser = () => {
+    console.log('User logged out.');
+    this.setState({
+      user: null,
+      loggedIn: false
+    });
+  }
 
   render() {
+    const { user, loggedIn }  = this.state;
+    
+    const props = {
+      user: user,
+      loggedIn: loggedIn,
+      loginUser: this.loginUser,
+      logoutUser: this.logoutUser,
+    }
+
     return(
       <Router>
         <Switch>
-          <Route exact path="/" component={Guest} />
-          <Route exact path="/auth" component={Auth}/> 
+          <Route exact path="/" 
+          render={(routeProps) => (<Guest {...routeProps} {...props}/>)} 
+          />
+          <Route exact path="/auth" 
+          render={(routeProps) => (<Auth {...routeProps} {...props}/>)}
+          /> 
           <Route component={ErrorPage}/>
         </Switch>
       </Router>
