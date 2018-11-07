@@ -47,7 +47,8 @@ const qbSeed = [
             "TB": 0.45,
             "TEN": 0.45,
             "WAS": 0.45,
-        }
+        },
+        id: null
     },
     {
         name: "Andy Dalton",
@@ -88,7 +89,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Andrew Luck",
@@ -129,7 +131,8 @@ const qbSeed = [
             "TB": 0.33,
             "TEN": 0.33,
             "WAS": 0.33
-        }
+        },
+        id: null
     },
     {
         name: "Tom Brady",
@@ -170,7 +173,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Drew Brees",
@@ -211,7 +215,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Eli Manning",
@@ -252,7 +257,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Josh McCown",
@@ -293,7 +299,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Derek Anderson",
@@ -334,7 +341,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Philip Rivers",
@@ -375,7 +383,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Aaron Rodgers",
@@ -416,7 +425,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Ben Roethlisberger",
@@ -457,7 +467,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Alex Smith",
@@ -498,7 +509,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Ryan Fitzpatrick",
@@ -539,7 +551,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Joe Flacco",
@@ -580,7 +593,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Matt Ryan",
@@ -621,7 +635,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Matthew Stafford",
@@ -662,7 +677,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Cam Newton",
@@ -703,7 +719,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Ryan Tannehill",
@@ -744,7 +761,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Kirk Cousins",
@@ -785,7 +803,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Nick Foles",
@@ -826,7 +845,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Case Keenum",
@@ -867,7 +887,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Brock Osweiler",
@@ -908,7 +929,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Russell Wilson",
@@ -949,7 +971,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Blake Bortles",
@@ -990,7 +1013,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Derek Carr",
@@ -1031,7 +1055,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Marcus Mariota",
@@ -1072,7 +1097,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Jameis Winston",
@@ -1113,7 +1139,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Jared Goff",
@@ -1154,7 +1181,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Dak Prescott",
@@ -1195,7 +1223,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Carson Wentz",
@@ -1236,7 +1265,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "C.J. Beathard",
@@ -1277,7 +1307,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Nathan Peterman",
@@ -1318,7 +1349,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Mitchell Trubisky",
@@ -1359,7 +1391,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Deshaun Watson",
@@ -1400,7 +1433,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Josh Allen",
@@ -1441,7 +1475,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Sam Darnold",
@@ -1482,7 +1517,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Baker Mayfield",
@@ -1523,7 +1559,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Josh Rosen",
@@ -1564,7 +1601,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     },
     {
         name: "Nick Mullens",
@@ -1605,7 +1643,8 @@ const qbSeed = [
             "TB": 0.5,
             "TEN": 0.5,
             "WAS": 0.5
-        }
+        },
+        id: null
     }
 ];
 

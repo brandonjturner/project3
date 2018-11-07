@@ -42,10 +42,7 @@ const quarterbackSchema = new Schema({
         "TEN": Number,
         "MIN": Number
     },
-    attempt: [{
-        type: Schema.Types.ObjectId,
-        ref: "Attempt"
-      }]
+    id: String
 })
 
 // Create reference to Quarterback & export

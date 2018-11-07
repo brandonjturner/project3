@@ -12,7 +12,14 @@
     "react-scripts": "2.0.5"
   },
   "babel": {
-    "plugins": [["@babel/plugin-proposal-decorators", {"legacy": true}]]
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
