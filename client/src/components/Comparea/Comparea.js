@@ -10,7 +10,9 @@ class Comparea extends Component {
 
   render() {
     
-    const { qbs, compareCity, saved } = this.props;
+    const { qbs, compareCity, saved, updateUser, username } = this.props;
+    
+
 
     return (
       <Droppable droppableId={this.props.column.id}>
@@ -22,20 +24,23 @@ class Comparea extends Component {
           >
             <Grid
             fluid bsClass="comparea-list h-100 container">
+              
               <div style={{"direction": "ltr"}}>
                 {qbs.map((qb, index) => {
 
                 const isFav = saved.filter(qbId => qbId === qb.id);
-                
+      
                 return <QB
-                key={qb.favId}
+                key={qb.id}
                 qb={qb}
                 index={index}
-                id={qb.favId}
+                id={qb.id}
                 name={qb.name}
                 currentCol={this.props.column.id}
                 saved={isFav.length === 1 ? true : false}
+                username={username}
                 compareCity={compareCity}
+                updateUser={updateUser}
                 />
                 })}
               </div>

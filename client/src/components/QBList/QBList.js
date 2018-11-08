@@ -7,7 +7,7 @@ import './QBList.css';
 class QBList extends Component {
 
   render() {  
-    const { qbs, saved } = this.props;
+    const { qbs, saved, updateUser } = this.props;
 
 
 
@@ -36,6 +36,7 @@ class QBList extends Component {
                 currentCol={this.props.column.id}
                 saved={isFav.length === 1 ? true : false}
                 username={this.props.username}
+                updateUser={updateUser}
                 />
               })}
               {provided.placeholder}

@@ -31,6 +31,7 @@
 .dropdown > .dropdown-menu > li > a {
   color: rgba(255, 255, 255, 0.849);
   z-index: 2;
+  
 }
 
 .dropdown > .dropdown-menu {

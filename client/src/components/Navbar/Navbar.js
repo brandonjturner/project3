@@ -39,6 +39,11 @@ class UserNav extends Component {
     }
   }
 
+  handleCompareClick = () => {
+    this.props.toggleCompareMode();
+    this.props.updateUser();
+  }
+
   signOut = e => {
     e.preventDefault();
     axios
@@ -67,7 +72,7 @@ class UserNav extends Component {
         </Navbar.Header>
         <Nav navbar pullLeft>
           <div className="compare-toggle-container">
-            {this.props.placeholder === false ? '' : <Compare className="compare-button" onClick={this.props.toggleCompareMode} compareMode={this.props.compareMode}>Compare Mode</Compare>}
+            {this.props.placeholder === false ? '' : <Compare className="compare-button" onClick={this.handleCompareClick} compareMode={this.props.compareMode}>Compare Mode</Compare>}
           </div>
         </Nav>
         <Nav navbar pullRight bsClass="logout-button-container nav">
