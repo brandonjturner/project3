@@ -14,8 +14,7 @@ const userSchema = new Schema({
 	},
 	photos: [],
 	players:[{
-    	type: Schema.Types.ObjectId,
-		ref: "Quarterback"
+    	type: String,
     }]
 	// local: {
 	// 	email: { type: String, unique: true },

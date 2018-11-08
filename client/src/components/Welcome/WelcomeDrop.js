@@ -14,12 +14,9 @@ class WelcomeDrop extends Component {
     qbList: []
   }
 
-  
-
-
   render() {
 
-    const { qbs } = this.props;
+    const { qbs, saved, username } = this.props;
 
     return (
       <Droppable droppableId={this.props.column.id}>
@@ -46,6 +43,9 @@ class WelcomeDrop extends Component {
               <Grid
               fluid bsClass="qb-info-list h-100 container">
                 {qbs.map((qb, index) => {
+
+                  const isFav = saved.filter(qbId => qbId === qb.id);
+                  
                   return <QB
                   key={qb.id}
                   qb={qb}
@@ -53,6 +53,8 @@ class WelcomeDrop extends Component {
                   id={qb.id}
                   name={qb.name}
                   currentCol={this.props.column.id}
+                  saved={isFav.length === 1 ? true : false}
+                  username={username}
                   />
                 })}
               {provided.placholder}

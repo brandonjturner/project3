@@ -9,14 +9,15 @@ import './Master.css';
 import { DragDropContext } from 'react-beautiful-dnd';
 import API from '../../utils/API';
 import dummyFavs from './dummyFavs.json';
+import axios from 'axios';
 
 
 class Master extends Component {
   state = {
     initialData: {},
-    compareInitialData: {},
     compareMode: false,
     compareCity: 'Select a city',
+    currentUser: null
   };
 
   toggleCompareMode = () => {
@@ -45,7 +46,19 @@ class Master extends Component {
   }
 
   componentDidMount = () => {
-    this.loadQBs();
+    axios
+      .get('/auth/user')
+      .then(response => {
+        //console.log(response);
+        const { user } = response.data;
+        if (user === null) {
+          console.log('No User');
+        } 
+        else {
+          this.setState({ currentUser: user});
+        }
+        this.loadQBs();
+      });
   }
 
   loadQBs = () => {
@@ -85,7 +98,10 @@ class Master extends Component {
   }
 
   loadFavs = () => {
-    const qbIds = ['qb-2', 'qb-1'];
+
+    const { players } = this.state.currentUser;
+
+    const qbIds = players;
 
     //console.log(dummyFavs);
     this.setState({ 
@@ -183,9 +199,14 @@ class Master extends Component {
   };
 
   render() {
-    const { compareMode, initialData } = this.state;
+    const { compareMode, initialData, currentUser, compareCity } = this.state;
     
-    if (initialData.qbs !== undefined && initialData.columns['column-3'] !== undefined) {
+    
+    if (initialData.qbs !== undefined && initialData.columns['column-3'] !== undefined && currentUser !== null) {
+    
+      const { players, username } = currentUser;
+    
+
       //console.log(initialData);
       const qbs1 = initialData.columns['column-1'].qbIds.map(qbId => initialData.qbs[qbId]);
       const qbs2 = initialData.columns['column-2'].qbIds.map(qbId => initialData.qbs[qbId]);
@@ -196,10 +217,10 @@ class Master extends Component {
       const basic = (
         <Row bsClass="row h-100 data-row">
           <Col md={6} bsClass="data-container data-left h-100 col">
-            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1} togglesaved={this.togglesaved}/>
+            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1} saved={players} username={username}/>
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
-            <WelcomeDrop key={initialData.columns['column-2'].id} column={initialData.columns['column-2']} qbs={qbs2}/>
+            <WelcomeDrop key={initialData.columns['column-2'].id} column={initialData.columns['column-2']} qbs={qbs2} saved={players} username={username}/>
           </Col>
         </Row>
       );
@@ -226,13 +247,13 @@ class Master extends Component {
       const compare = (
         <Row bsClass="row h-100 data-row">
           <Col md={6} bsClass="data-container data-left h-100 col">
-            <FavList key={initialData.columns['column-3'].id} column={initialData.columns['column-3']} qbs={qbs3} />
+            <FavList key={initialData.columns['column-3'].id} column={initialData.columns['column-3']} qbs={qbs3} saved={players} username={username} />
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
             <nav className="compare-nav">
               {compareForm}
             </nav>
-            <Comparea key={initialData.columns['column-4'].id} column={initialData.columns['column-4']} qbs={qbs4} />
+            <Comparea key={initialData.columns['column-4'].id} column={initialData.columns['column-4']} qbs={qbs4} saved={players} username={username} compareCity={compareCity}/>
           </Col>
         </Row>
       );

@@ -7,7 +7,10 @@ import './QBList.css';
 class QBList extends Component {
 
   render() {  
-    const { qbs, togglesaved } = this.props;
+    const { qbs, saved } = this.props;
+
+
+
     //console.log(togglesaved);
     //console.log(qbs);
     return (
@@ -21,6 +24,9 @@ class QBList extends Component {
             <Grid
             fluid bsClass="qb-list h-100 container">
               {qbs.map((qb, index) => {
+                
+                const isFav = saved.filter(qbId => qbId === qb.id);
+                
                 return <QB
                 key={qb.id}
                 qb={qb}
@@ -28,8 +34,8 @@ class QBList extends Component {
                 id={qb.id}
                 name={qb.name}
                 currentCol={this.props.column.id}
-                saved={qb.saved}
-                togglesaved={this.props.togglesaved}
+                saved={isFav.length === 1 ? true : false}
+                username={this.props.username}
                 />
               })}
               {provided.placeholder}

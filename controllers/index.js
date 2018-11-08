@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../db/models/user')
 const passport = require('../passport')
 
+
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 router.get(
 '/google/callback',
@@ -25,6 +26,34 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
+router.put('/user/player/add', (req, res) => {
+	
+	console.log("adding user log");
+	console.log(req.body);
+	const { username, qbId } = req.body;
+	User.update({ username: username }, 
+		{$push: {players: qbId}}
+	)
+	.then((response) => {
+		console.log(response);
+	})
+	
+});
+
+router.put('/user/player/delete', (req, res) => {
+	
+	console.log("adding user log");
+	console.log(req.body);
+	const { username, qbId } = req.body;
+	User.update({ username: username }, 
+		{$pullAll: {players: [qbId]}}
+	)
+	.then((response) => {
+		console.log(response);
+	})
+	
+});
+
 router.post(
 	'/login',
 	function(req, res, next) {
@@ -37,9 +66,9 @@ router.post(
 		console.log('POST to /login')
 		const user = JSON.parse(JSON.stringify(req.user)) // hack
 		const cleanUser = Object.assign({}, user)
-		if (cleanUser.local) {
-			console.log(`Deleting ${cleanUser.local.password}`)
-			delete cleanUser.local.password
+		if (cleanUser) {
+			console.log(`Deleting ${cleanUser.password}`)
+			delete cleanUser.password
 		}
 		res.json({ user: cleanUser })
 	}

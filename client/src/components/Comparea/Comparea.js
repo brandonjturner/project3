@@ -10,7 +10,7 @@ class Comparea extends Component {
 
   render() {
     
-    const { qbs } = this.props;
+    const { qbs, compareCity, saved } = this.props;
 
     return (
       <Droppable droppableId={this.props.column.id}>
@@ -24,6 +24,9 @@ class Comparea extends Component {
             fluid bsClass="comparea-list h-100 container">
               <div style={{"direction": "ltr"}}>
                 {qbs.map((qb, index) => {
+
+                const isFav = saved.filter(qbId => qbId === qb.id);
+                
                 return <QB
                 key={qb.favId}
                 qb={qb}
@@ -31,7 +34,8 @@ class Comparea extends Component {
                 id={qb.favId}
                 name={qb.name}
                 currentCol={this.props.column.id}
-                saved={qb.saved}
+                saved={isFav.length === 1 ? true : false}
+                compareCity={compareCity}
                 />
                 })}
               </div>
