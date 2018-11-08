@@ -23,10 +23,10 @@ const Welcome = (props) => {
             Hello! Welcome to Blitz Report, where you can take your Fantasy Football game to the next level. Track your favorite Quarterback's stats throughout the season with real-time post-game updates.
           </p>
           <h2>Tutorial</h2>
-          <p style={{width: "85%", "textAlign": "center", direction: "ltr", color: "rgba(255, 255, 255, 0.726)"}}>Drag a quarterback from the roster to the right-side panel to see more detailed statistics. Toggle comparison mode and drag a saved quarterback to the right panel to see their (stat) based off of the opposing team.</p>
+          <p style={{width: "85%", "textAlign": "center", direction: "ltr", color: "rgba(255, 255, 255, 0.726)"}}>Drag a quarterback from the roster to the right-side panel to see more detailed statistics. Use the save button to save quarterbacks for use in comparison mode. Toggle comparison mode and drag a saved quarterback to the right panel to see their (stat) based off of the opposing team.</p>
           <h2>About</h2>
           <p style={{color: "rgba(255, 255, 255, 0.726)"}}>
-            Blitz Report was created by Brandon Turner, Bruce Chang, Cyrus
+            Created by Brandon Turner, Bruce Chang, Cyrus
             Sepahbodi, and Marlo Carreon
           </p>
         </div>
