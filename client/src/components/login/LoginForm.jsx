@@ -11,7 +11,8 @@ class LoginForm extends Component {
 		this.state = {
 			username: '',
 			password: '',
-			redirectTo: null
+			redirectTo: null,
+			errorMessage: null
 		}
 	}
 
@@ -37,7 +38,7 @@ class LoginForm extends Component {
 			})
 			.catch(error => {
 				console.log('login error: ');
-				console.log(error);
+				this.setState({ errorMessage: 'Invalid credentials'})
 			})
 	}
 
@@ -61,6 +62,7 @@ class LoginForm extends Component {
 				<div className="login-form-container">
 					<form>
 						<h2>Sign In</h2>
+						<p style={{ color: "red", opacity: .8, fontSize: ".7em"}}>{this.state.errorMessage !== null ? this.state.errorMessage : ''}</p>
 						<FormGroup>
 							<FormControl
 							type="text"
