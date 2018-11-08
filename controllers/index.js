@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require('../db/models/user')
 const passport = require('../passport')
 
+
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }))
 router.get(
 '/google/callback',
@@ -24,6 +25,34 @@ router.get('/user', (req, res, next) => {
 		return res.json({ user: null })
 	}
 })
+
+router.put('/user/player/add', (req, res) => {
+	
+	console.log("adding user log");
+	console.log(req.body);
+	const { username, qbId } = req.body;
+	User.update({ username: username }, 
+		{$push: {players: qbId}}
+	)
+	.then((response) => {
+		console.log(response);
+	})
+	
+});
+
+router.put('/user/player/delete', (req, res) => {
+	
+	console.log("adding user log");
+	console.log(req.body);
+	const { username, qbId } = req.body;
+	User.update({ username: username }, 
+		{$pullAll: {players: [qbId]}}
+	)
+	.then((response) => {
+		console.log(response);
+	})
+	
+});
 
 router.post(
 	'/login',

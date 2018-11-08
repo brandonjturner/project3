@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Draggable } from 'react-beautiful-dnd';
 import './QB.css';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const DefCard = styled.div`
   background-color: ${props => (props.isDragging ? '#141418f3': '#322b3acc')};
@@ -12,6 +13,11 @@ const Div = styled.div`
   background-color: ${props => (props.isDragging ? '#141418f3': '#322b3acc')};
 `;
 
+const CompPercent = styled.h5`
+  color: ${props => props.status};
+  float: clear;
+`;
+
 class QB extends Component {
   state = {
     currentCol: this.props.currentCol,
@@ -19,23 +25,41 @@ class QB extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.saved !== this.props.saved) {
+    if (nextProps.saved !== this.props.saved && this.state.saved === this.props.saved) {
       this.setState({ saved: nextProps.saved});
     }
   }
 
-  handleSave = (e, id) => {
-    e.preventDefault();
-    console.log(this.props.togglesaved);
+  handleSave = (e) => {
+    this.setState({ saved: true });
+    axios
+      .put('/auth/user/player/add', { 
+        username: this.props.username,
+        qbId: this.props.qb.id
+      })
+      .then(response => {
+        console.log('QB has been saved');
+        console.log(response);
+      })
+      .catch(error => console.log(error));
   }
 
-  handleRemove = (e, id) => {
-    e.preventDefault();
-    this.props.togglesaved(id)
+  handleDelete = (e) => {
+    this.setState({ saved: false });
+    axios
+      .put('/auth/user/player/delete', { 
+      username: this.props.username,
+      qbId: this.props.qb.id
+      })
+      .then(response => {
+      console.log('QB has been deleted');
+      console.log(response);
+      })
+      .catch(error => console.log(error));
   }
   
   render() {
-    const { id, qb } = this.props;
+    const { id, qb, compareCity } = this.props;
     const { currentCol, saved } = this.state;
     
     return (
@@ -67,13 +91,13 @@ class QB extends Component {
                 </Row>
               </Col>
               <Col xs={1}>
-              {saved ? <button className="saved-qb-button" onClick={this.handleRemove(this.props.id)}>Saved</button> : <button className="save-qb-button" onClick={(e) => this.handleSave(e, this.props.id)}>Save</button>}
+              {saved ? <button className="saved-qb-button" onClick={this.handleDelete} >Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
               </Col>
             </DefCard>)
 
 
 
-          if (currentCol === "column-2") {
+          if (currentCol === "column-2" || currentCol === "column-3") {
             return (
               <Div 
               ref={provided.innerRef}
@@ -100,7 +124,7 @@ class QB extends Component {
                       <h4>Avg. Pocket Time: {qb.avgPocketTime}</h4>
                     </Col>
                     <Col xs={6}>
-                      <h4 style={{float: 'clear'}}>Completion %: {qb.completionPercentage}</h4>
+                      <h4 style={{float: 'clear'}}>Completion: {qb.completionPercentage * 100}%</h4>
                     </Col>
                   </Row>
                 </Col>
@@ -108,6 +132,75 @@ class QB extends Component {
                   {saved ? <button className="saved-qb-button" onClick={this.handleRemove}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
                 </Col>
               </Div>)
+          }
+
+          if (currentCol === "column-4") {
+
+            let city = compareCity; 
+            let cityPerc;
+            let showCity = false;
+            let status = 'white';
+
+            if (city !== 'Select a city') {
+              showCity = true;
+              cityPerc = qb.vsDefenseCompletionPercentage[city] * 100;
+              if (cityPerc > qb.completionPercentage * 100) {
+                status = 'green';
+              } else if (cityPerc === qb.completionPercentage * 100) {
+                status = 'white';
+              } else {
+                status = 'red';
+              }
+            } 
+
+
+            const defComp = (
+              <div>
+                <h4 style={{float: 'clear'}}>Completion: {qb.completionPercentage * 100}%</h4>
+              </div>
+            );
+            const appComp = (
+              <div>
+                <h5 style={{float: 'clear'}}>Completion: {qb.completionPercentage * 100}%</h5>
+                <CompPercent status={status}>Comp. against {compareCity}: {cityPerc}%</CompPercent>
+              </div>
+            );
+            
+
+            return (
+              <Div 
+              ref={provided.innerRef}
+              id={id} 
+              className="row qb-row"
+              {...provided.draggableProps}
+              {...provided.dragHandleProps}
+              isDragging={snapshot.isDragging}
+              >
+                <Col xs={3}>
+                  <div className="qb-img-container">
+                    <img src={qb.image} className={"img qb-img"} alt={`${qb.name}`}/>
+                  </div>
+                </Col>
+                
+                <Col xs={8}>
+                  <Row>
+                    <Col xs={8}>
+                      <h4>{qb.name}, {qb.currentTeam}</h4>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={6}>
+                      <h4>Avg. Pocket Time: {qb.avgPocketTime}</h4>
+                    </Col>
+                    <Col xs={6}>
+                      {showCity ? appComp : defComp}
+                    </Col>
+                  </Row>
+                </Col>
+                <Col xs={1}>
+                  {saved ? <button className="saved-qb-button" onClick={this.handleRemove}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
+                </Col>
+              </Div>) 
           }
 
         return defaultCard;

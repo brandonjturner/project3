@@ -22,7 +22,7 @@ class UserNav extends Component {
     axios
       .get('/auth/user')
       .then(response => {
-        console.log(response);
+        //console.log(response);
         const { user } = response.data;
         if (user === null) {
           this.setState({userName: ''});
