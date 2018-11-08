@@ -20,9 +20,9 @@ router.get('/user', (req, res, next) => {
 	console.log(req.user)
 	console.log('/user end');
 	if (req.user) {
-		return res.json({ user: req.user })
+		res.json({ user: req.user })
 	} else {
-		return res.json({ user: null })
+		res.json({ user: null })
 	}
 })
 
@@ -36,6 +36,7 @@ router.put('/user/player/add', (req, res) => {
 	)
 	.then((response) => {
 		console.log(response);
+		res.send(response);
 	})
 	
 });
@@ -50,6 +51,7 @@ router.put('/user/player/delete', (req, res) => {
 	)
 	.then((response) => {
 		console.log(response);
+		res.send(response);
 	})
 	
 });
@@ -78,9 +80,9 @@ router.post('/logout', (req, res) => {
 	if (req.user) {
 		req.session.destroy()
 		res.clearCookie('connect.sid') // clean up!
-		return res.json({ msg: 'logging you out' })
+		res.json({ msg: 'logging you out' })
 	} else {
-		return res.json({ msg: 'no user to log out!' })
+		res.json({ msg: 'no user to log out!' })
 	}
 })
 

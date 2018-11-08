@@ -16,7 +16,7 @@ class WelcomeDrop extends Component {
 
   render() {
 
-    const { qbs, saved, username } = this.props;
+    const { qbs, saved, username, updateUser } = this.props;
 
     return (
       <Droppable droppableId={this.props.column.id}>
@@ -55,6 +55,7 @@ class WelcomeDrop extends Component {
                   currentCol={this.props.column.id}
                   saved={isFav.length === 1 ? true : false}
                   username={username}
+                  updateUser={updateUser}
                   />
                 })}
               {provided.placholder}

@@ -25,9 +25,9 @@ class QB extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.saved !== this.props.saved && this.state.saved === this.props.saved) {
-      this.setState({ saved: nextProps.saved});
-    }
+    // if (nextProps.saved !== this.props.saved && this.state.saved === this.props.saved) {
+    //   this.setState({ saved: nextProps.saved});
+    // }
   }
 
   handleSave = (e) => {
@@ -40,6 +40,7 @@ class QB extends Component {
       .then(response => {
         console.log('QB has been saved');
         console.log(response);
+        this.props.updateUser();
       })
       .catch(error => console.log(error));
   }
@@ -48,12 +49,12 @@ class QB extends Component {
     this.setState({ saved: false });
     axios
       .put('/auth/user/player/delete', { 
-      username: this.props.username,
-      qbId: this.props.qb.id
+        username: this.props.username,
+        qbId: this.props.qb.id
       })
       .then(response => {
-      console.log('QB has been deleted');
-      console.log(response);
+        console.log('QB has been deleted')
+        this.props.updateUser();
       })
       .catch(error => console.log(error));
   }
@@ -129,7 +130,7 @@ class QB extends Component {
                   </Row>
                 </Col>
                 <Col xs={1}>
-                  {saved ? <button className="saved-qb-button" onClick={this.handleRemove}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
+                  {saved ? <button className="saved-qb-button" onClick={this.handleDelete}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
                 </Col>
               </Div>)
           }
@@ -198,7 +199,7 @@ class QB extends Component {
                   </Row>
                 </Col>
                 <Col xs={1}>
-                  {saved ? <button className="saved-qb-button" onClick={this.handleRemove}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
+                  {saved ? <button className="saved-qb-button" onClick={this.handleDelete}>Saved</button> : <button className="save-qb-button" onClick={this.handleSave}>Save</button>}
                 </Col>
               </Div>) 
           }

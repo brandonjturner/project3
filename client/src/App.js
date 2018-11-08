@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Auth from './pages/Auth';
 import ErrorPage from './pages/ErrorPage';
 import Guest from './pages/Guest';
+import axios from 'axios';
 
 class App extends Component {
   
@@ -35,6 +36,7 @@ class App extends Component {
       loggedIn: loggedIn,
       loginUser: this.loginUser,
       logoutUser: this.logoutUser,
+      updateUser: this.updateUser
     }
 
     return(

@@ -15,7 +15,6 @@ class SignIn extends Component {
 
   handleSignIn = e => {
     e.preventDefault();
-    
     this.setState({signIn: true, signUp: false});
   }; 
 

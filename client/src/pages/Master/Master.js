@@ -61,6 +61,40 @@ class Master extends Component {
       });
   }
 
+  updateUser = () => {
+    console.log('updateUser');
+    axios
+      .get('/auth/user')
+      .then(response => {
+        console.log(response);
+        const { user } = response.data;
+        if (user === null) {
+          console.log('No User');
+        } 
+        else {
+          this.setState({ currentUser: user});
+        }
+        this.loadQBs();
+      });
+  }
+
+  updateUserNoLoad = () => {
+    console.log('updateUserNoLoad')
+    axios
+      .get('/auth/user')
+      .then(response => {
+        console.log(response);
+        const { user } = response.data;
+        if (user === null) {
+          console.log('No User');
+        } 
+        else {
+          this.setState({ currentUser: user});
+        }
+        
+    });
+  }
+
   loadQBs = () => {
     const qbIds = [];
     const qbs = {};
@@ -217,10 +251,10 @@ class Master extends Component {
       const basic = (
         <Row bsClass="row h-100 data-row">
           <Col md={6} bsClass="data-container data-left h-100 col">
-            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1} saved={players} username={username}/>
+            <QBList key={initialData.columns['column-1'].id} column={initialData.columns['column-1']} qbs={qbs1} saved={players} username={username} updateUser={this.updateUserNoLoad}/>
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
-            <WelcomeDrop key={initialData.columns['column-2'].id} column={initialData.columns['column-2']} qbs={qbs2} saved={players} username={username}/>
+            <WelcomeDrop key={initialData.columns['column-2'].id} column={initialData.columns['column-2']} qbs={qbs2} saved={players} username={username} updateUser={this.updateUserNoLoad}/>
           </Col>
         </Row>
       );
@@ -247,13 +281,13 @@ class Master extends Component {
       const compare = (
         <Row bsClass="row h-100 data-row">
           <Col md={6} bsClass="data-container data-left h-100 col">
-            <FavList key={initialData.columns['column-3'].id} column={initialData.columns['column-3']} qbs={qbs3} saved={players} username={username} />
+            <FavList key={initialData.columns['column-3'].id} column={initialData.columns['column-3']} qbs={qbs3} saved={players} username={username} updateUser={this.updateUserNoLoad}/>
           </Col>
           <Col md={6} bsClass="data-container data-right h-100 col">
             <nav className="compare-nav">
               {compareForm}
             </nav>
-            <Comparea key={initialData.columns['column-4'].id} column={initialData.columns['column-4']} qbs={qbs4} saved={players} username={username} compareCity={compareCity}/>
+            <Comparea key={initialData.columns['column-4'].id} column={initialData.columns['column-4']} qbs={qbs4} saved={players} username={username} updateUser={this.updateUserNoLoad} compareCity={compareCity}/>
           </Col>
         </Row>
       );
@@ -263,7 +297,7 @@ class Master extends Component {
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav toggleCompareMode={this.toggleCompareMode} compareMode={this.state.compareMode} {...this.props}/>
+            <UserNav toggleCompareMode={this.toggleCompareMode} compareMode={this.state.compareMode} {...this.props} updateUser={this.updateUser}/>
             {compareMode ? compare : basic}
             <UserNav footer={true} />
           </Grid>
@@ -277,7 +311,7 @@ class Master extends Component {
           onDragEnd = { this.onDragEnd }
         >
           <Grid fluid={true} bsClass={'body-container container'}>
-            <UserNav toggleCompareMode={this.toggleCompareMode} {...this.props}/>
+            <UserNav toggleCompareMode={this.toggleCompareMode} {...this.props} updateUser={this.updateUser}/>
               <Row bsClass="row h-100">
                 loading
               </Row>
