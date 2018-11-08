@@ -62,7 +62,7 @@ class UserNav extends Component {
       <Navbar fixedTop inverse fluid pullLeft>
         <Navbar.Header pullLeft>
           <Navbar.Brand>
-            <a href="/auth" className="nav-brand">Blitz Report</a>
+            <a href="/" className="nav-brand">Blitz Report</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav navbar pullLeft>
