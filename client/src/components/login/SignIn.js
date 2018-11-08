@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Button } from 'react-bootstrap';
 import googleButton from '../login/google_signin_buttons/web/1x/btn_google_signin_dark_normal_web.png';
 import LoginForm from './LoginForm.jsx';
-import SignupForm from '../SignupForm.jsx';
+import SignupForm from './SignupForm.jsx';
 import './SignIn.css';
 
 

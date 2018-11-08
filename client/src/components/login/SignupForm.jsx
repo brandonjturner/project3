@@ -12,7 +12,8 @@ class SignupForm extends Component {
       password: '',
       confirmPassword: '',
       redirectTo: null,
-      goodData: false
+      goodData: false,
+      errorMessage: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -60,13 +61,14 @@ class SignupForm extends Component {
             console.log(error);
           })
         } 
-        
         else {
           console.log('Duplicate User');
+          this.setState({errorMessage: 'User already exists'})
         }
       });
     } else {
       console.log("Invalid Sign Up Data");
+      this.setState({errorMessage: 'Invalid data'})
     }
   }
 
@@ -113,6 +115,7 @@ class SignupForm extends Component {
       <div className="signup-form-container">
         <form action="">
           <h1>Sign Up</h1>
+          <p style={{ color: "red", opacity: .8, fontSize: ".7em"}}>{this.state.errorMessage !== null ? this.state.errorMessage : ''}</p>
           <FormGroup
           validationState={this.validateUsername()}
           >
