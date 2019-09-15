@@ -4,6 +4,11 @@ import Auth from './pages/Auth';
 import ErrorPage from './pages/ErrorPage';
 import Guest from './pages/Guest';
 import axios from 'axios';
+var http = require("http");
+
+setInterval(function() {
+    http.get("http://blitzreport.herokuapp.com");
+}, 900000);
 
 class App extends Component {
   
