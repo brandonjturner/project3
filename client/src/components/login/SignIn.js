@@ -9,7 +9,7 @@ import './SignIn.css';
 class SignIn extends Component {
 
   state = {
-    signIn: false, 
+    signIn: true, 
     signUp: false
   }
 
@@ -34,10 +34,10 @@ class SignIn extends Component {
           <div className="sign-container">
             <h2 style={{"marginBottom": "20px"}}>Welcome</h2>
             <Button onClick={this.handleSignIn} bsClass="sign-in btn">Sign In</Button>
-            <a href="/auth/google">
-						{/* <GoogleButton /> */}
+            {/* <a href="/auth/google">
+					
 						  <img src={googleButton} alt="sign into Google Button" />
-				  	</a>
+				  	</a> */}
             <h4 style={{"marginBottom": "20px"}}>Need an Account?</h4>
             <Button onClick={this.handleSignUp} bsClass="sign-up btn">Sign Up</Button>
           </div>

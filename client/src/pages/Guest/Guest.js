@@ -22,7 +22,7 @@ class Guest extends Component {
         //console.log(response);
         const { user } = response.data;
         if (user === null) {
-          console.log("No user, staying at guest page");
+          //console.log("No user, staying at guest page");
           this.setState({loading: false});
         } 
         else {

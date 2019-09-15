@@ -23,8 +23,8 @@ class LoginForm extends Component {
 				password: password
 			})
 			.then(response => {
-				console.log('login response: ');
-				console.log(response);
+				//console.log('login response: ');
+				//console.log(response);
 
 				if (response.status === 200) {
 					const { user } = response.data;
@@ -37,11 +37,10 @@ class LoginForm extends Component {
 				}
 			})
 			.catch(error => {
-				console.log('login error: ');
+				//console.log('login error: ');
 				this.setState({ errorMessage: 'Invalid credentials'})
 			})
 	}
-
 
 	handleChange = (event) => {
 		this.setState({
@@ -51,7 +50,7 @@ class LoginForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault()
-		console.log('handleSubmit');
+		//console.log('handleSubmit');
 		this.login(this.state.username, this.state.password);
 	}
 	render() {
@@ -81,15 +80,15 @@ class LoginForm extends Component {
 							onChange={this.handleChange}
 							/>
 							<HelpBlock>
-								<a className="create-account-link" onClick={this.props.signupRedirect} href="/#">Create an account</a>
+								<a className="create-account-link" onClick={this.props.signupRedirect} href="/#">Create an account</a><br/>
+								<a className="create-account-link" onClick={() => this.login('admin', 'admin')} href="/#">Sign in as guest</a>
 							</HelpBlock>
 						</FormGroup>
 						<button className="sign-in" onClick={this.handleSubmit}>Sign in</button>
 					</form>
-					<a href="/auth">
-						{/* <GoogleButton /> */}
+					{/* <a href="/auth">
 						<img src={googleButton} alt="sign into Google Button" />
-					</a>
+					</a> */}
 				</div>
 			)
 		}
